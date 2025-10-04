@@ -14,9 +14,9 @@ Note: the FileFilter argument must be specified even though it is ignored with t
 
 Examples:
 ```
-GDFileDialog --open-file  "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Open File"
-GDFileDialog --open-files "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Open Files"
-GDFileDialog --save-file  "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" Save As"
-GDFileDialog --open-dir   "" "Select Directory"
-GDFileDialog --open-any   "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Select Files or Directories"
+./GDFileDialog --open-file  "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Open File"
+./GDFileDialog --open-files "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Open Files"
+./GDFileDialog --save-file  "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" Save As"
+./GDFileDialog --open-dir   "" "Select Directory"
+./GDFileDialog --open-any   "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Select Files or Directories"
 ```
