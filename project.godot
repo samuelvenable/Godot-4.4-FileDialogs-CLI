@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GDFileDialog"
+config/name="gdfiledialogs"
 run/main_scene="res://control.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false
@@ -20,8 +20,8 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=362
+window/size/viewport_width=800
+window/size/viewport_height=600
 window/size/resizable=false
 
 [rendering]
