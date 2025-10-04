@@ -10,6 +10,8 @@ GDFileDialog --open-dir   FileFilter WindowCaption
 GDFileDialog --open-any   FileFilter WindowCaption
 ```
 
+Note: the FileFilter argument must be specified even though it is ignored with the `--open-dir` flag.
+
 Examples:
 ```
 GDFileDialog --open-file  "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Open File"
