@@ -25,9 +25,13 @@ func _ready():
 		get_window().title = "File Dialog"
 	file_dialog.size = DisplayServer.window_get_size()
 	file_dialog.file_selected.connect(_on_file_dialog_file_selected)
+	file_dialog.dir_selected.connect(_on_file_dialog_dir_selected)
 	file_dialog.popup()
 	add_child(file_dialog)
 func _on_file_dialog_file_selected(path: String):
+	print(path)
+	get_tree().quit()
+func _on_file_dialog_dir_selected(path: String):
 	print(path)
 	get_tree().quit()
 func _process(_delta):
