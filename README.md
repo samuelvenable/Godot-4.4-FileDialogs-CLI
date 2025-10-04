@@ -18,5 +18,5 @@ Examples:
 ./GDFileDialog --open-files "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Open Files"
 ./GDFileDialog --save-file  "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Save As"
 ./GDFileDialog --open-dir   "" "Select Directory"
-./GDFileDialog --open-any   "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Select Files or Directories"
+./GDFileDialog --open-any   "*.png;PNG Images|*.bmp;BMP Images|*.gif;GIF Images|*.jpeg,*jpg;JPEG Images" "Select File or Directory"
 ```
