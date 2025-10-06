@@ -21,8 +21,18 @@ func _ready():
 		var filters = args[1].split('|')
 		file_dialog.filters = filters
 		get_window().title = args[2]
+		var current_screen_id = DisplayServer.window_get_current_screen()
+		var screen_size = DisplayServer.screen_get_size(current_screen_id)
+		get_window().size = Vector2i(screen_size.x / 2, screen_size.y / 2)
+		if args.size() >= 5:
+			get_window().size = Vector2i(int(args[3]), int(args[4]))
+		get_window().move_to_center()
 	else:
 		get_window().title = "File Dialog"
+		var current_screen_id = DisplayServer.window_get_current_screen()
+		var screen_size = DisplayServer.screen_get_size(current_screen_id)
+		get_window().size = Vector2i(screen_size.x / 2, screen_size.y / 2)
+		get_window().move_to_center()
 	file_dialog.position = Vector2i(0, 0)
 	file_dialog.size = DisplayServer.window_get_size()
 	file_dialog.file_selected.connect(_on_file_dialog_file_selected)
