@@ -3,11 +3,11 @@ Godot 4.4-stable FileDialogs Command Line Interface
 
 Usage:
 ```
-GDFileDialog --open-file  FileFilter [WindowCaption] [WindowWidth] [WindowHeight]
-GDFileDialog --open-files FileFilter [WindowCaption] [WindowWidth] [WindowHeight]
-GDFileDialog --save-file  FileFilter [WindowCaption] [WindowWidth] [WindowHeight]
-GDFileDialog --open-dir   FileFilter [WindowCaption] [WindowWidth] [WindowHeight]
-GDFileDialog --open-any   FileFilter [WindowCaption] [WindowWidth] [WindowHeight]
+GDFileDialog --open-file  FileFilter [WindowCaption] [[WindowWidth] [WindowHeight]]
+GDFileDialog --open-files FileFilter [WindowCaption] [[WindowWidth] [WindowHeight]]
+GDFileDialog --save-file  FileFilter [WindowCaption] [[WindowWidth] [WindowHeight]]
+GDFileDialog --open-dir   FileFilter [WindowCaption] [[WindowWidth] [WindowHeight]]
+GDFileDialog --open-any   FileFilter [WindowCaption] [[WindowWidth] [WindowHeight]]
 ```
 
 Note: the FileFilter argument must be specified even though it is ignored with the `--open-dir` flag.
