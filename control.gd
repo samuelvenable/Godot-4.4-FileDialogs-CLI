@@ -11,7 +11,7 @@ func _ready():
 	get_window().size = Vector2i(screen_size.x / 2, screen_size.y / 2)
 	get_window().move_to_center()
 	var args = OS.get_cmdline_args()
-	if args.size() >= 2:
+	if args.size() >= 1:
 		if args[0] == "--open-file":
 			file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 		if args[0] == "--open-files":
@@ -23,10 +23,13 @@ func _ready():
 		if args[0] == "--open-any":
 			file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_ANY
 		file_dialog.access = FileDialog.ACCESS_FILESYSTEM
-		if args[1] != "":
-			var filters = args[1].split('|')
-			file_dialog.filters = filters
-		if args.size() >= 4:
+		if args[0] != "--open-dir" && args.size() >= 2:
+			if args[1] != "":
+				var filters = args[1].split('|')
+				file_dialog.filters = filters
+		if args[0] == "--open-dir" && args.size() >= 3:
+			get_window().size = Vector2i(int(args[1]), int(args[2]))
+		if args[0] != "--open-dir" && args.size() >= 4:
 			get_window().size = Vector2i(int(args[2]), int(args[3]))
 		get_window().move_to_center()
 	file_dialog.position = DisplayServer.window_get_position()
