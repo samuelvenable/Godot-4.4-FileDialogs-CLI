@@ -30,7 +30,9 @@ func _ready():
 			file_dialog.size = Vector2i(int(args[1]), int(args[2]))
 		if args[0] != "--open-dir" && args.size() >= 4:
 			file_dialog.size = Vector2i(int(args[2]), int(args[3]))
-	file_dialog.move_to_center()
+	var x = (screen_size.x - file_dialog.size.x) / 2
+	var y = (screen_size.y - file_dialog.size.y) / 2
+	file_dialog.position = Vector2i(x, y)
 	file_dialog.file_selected.connect(_on_file_dialog_file_selected)
 	file_dialog.files_selected.connect(_on_file_dialog_files_selected)
 	file_dialog.dir_selected.connect(_on_file_dialog_dir_selected)
