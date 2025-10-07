@@ -8,8 +8,7 @@ func _ready():
 	get_window().title = ""
 	var current_screen_id = DisplayServer.window_get_current_screen()
 	var screen_size = DisplayServer.screen_get_size(current_screen_id)
-	get_window().size = Vector2i(screen_size.x / 2, screen_size.y / 2)
-	get_window().move_to_center()
+	file_dialog.size = Vector2i(screen_size.x / 2, screen_size.y / 2)
 	var args = OS.get_cmdline_args()
 	if args.size() >= 1:
 		if args[0] == "--open-file":
@@ -28,12 +27,10 @@ func _ready():
 				var filters = args[1].split('|')
 				file_dialog.filters = filters
 		if args[0] == "--open-dir" && args.size() >= 3:
-			get_window().size = Vector2i(int(args[1]), int(args[2]))
+			file_dialog.size = Vector2i(int(args[1]), int(args[2]))
 		if args[0] != "--open-dir" && args.size() >= 4:
-			get_window().size = Vector2i(int(args[2]), int(args[3]))
-		get_window().move_to_center()
-	file_dialog.position = DisplayServer.window_get_position()
-	file_dialog.size = DisplayServer.window_get_size()
+			file_dialog.size = Vector2i(int(args[2]), int(args[3]))
+	file_dialog.move_to_center()
 	file_dialog.file_selected.connect(_on_file_dialog_file_selected)
 	file_dialog.files_selected.connect(_on_file_dialog_files_selected)
 	file_dialog.dir_selected.connect(_on_file_dialog_dir_selected)
