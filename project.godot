@@ -13,6 +13,7 @@ config_version=5
 config/name="gdfiledialogs"
 run/main_scene="res://control.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
@@ -23,7 +24,13 @@ config/icon="res://icon.svg"
 window/size/viewport_width=800
 window/size/viewport_height=600
 window/size/resizable=false
+window/size/borderless=true
+window/size/always_on_top=true
+window/size/transparent=true
+window/subwindows/embed_subwindows=false
+window/per_pixel_transparency/allowed=true
 
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+viewport/transparent_background=true

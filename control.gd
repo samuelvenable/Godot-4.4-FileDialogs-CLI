@@ -31,7 +31,7 @@ func _ready():
 		if args.size() >= 5:
 			get_window().size = Vector2i(int(args[3]), int(args[4]))
 		get_window().move_to_center()
-	file_dialog.position = Vector2i(0, 0)
+	file_dialog.position = DisplayServer.window_get_position()
 	file_dialog.size = DisplayServer.window_get_size()
 	file_dialog.file_selected.connect(_on_file_dialog_file_selected)
 	file_dialog.files_selected.connect(_on_file_dialog_files_selected)
@@ -49,8 +49,6 @@ func _on_file_dialog_dir_selected(path: String):
 	print(path)
 	get_tree().quit()
 func _process(_delta):
-	file_dialog.position = Vector2i(0, 0)
-	file_dialog.size = DisplayServer.window_get_size()
 	if file_dialog.visible == false:
 		print("")
 		get_tree().quit()
