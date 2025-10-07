@@ -26,10 +26,8 @@ func _ready():
 		if args[1] != "":
 			var filters = args[1].split('|')
 			file_dialog.filters = filters
-		if args.size() >= 3:
-			get_window().title = args[2]
-		if args.size() >= 5:
-			get_window().size = Vector2i(int(args[3]), int(args[4]))
+		if args.size() >= 4:
+			get_window().size = Vector2i(int(args[2]), int(args[3]))
 		get_window().move_to_center()
 	file_dialog.position = DisplayServer.window_get_position()
 	file_dialog.size = DisplayServer.window_get_size()
