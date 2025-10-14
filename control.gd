@@ -1,6 +1,14 @@
 extends Control
 var file_dialog = null
+var text_file = ""
 func _ready():
+	var temp_path = ""
+	if OS.get_name() == "Windows" || OS.get_name() == "UWP":
+		var username = OS.get_environment("USERNAME")
+		temp_path = "C:/Users/" + username + "/AppData/Local/Temp/"
+	else:
+		temp_path = "/tmp/"
+	text_file = str(temp_path) + "gdfiledialogs.txt"
 	get_window().size = Vector2i(0, 0)
 	file_dialog = FileDialog.new()
 	file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
@@ -39,16 +47,26 @@ func _ready():
 	file_dialog.popup()
 	add_child(file_dialog)
 func _on_file_dialog_file_selected(path: String):
-	print(path)
+	var file = FileAccess.open(text_file, FileAccess.WRITE)
+	if file:
+		file.store_line(path)
+		file.close()
 	get_tree().quit()
 func _on_file_dialog_files_selected(paths: PackedStringArray):
+	var all_paths = ""
 	for path in paths:
-		print(path)
+		all_paths += path + "\n"
+	var file = FileAccess.open(text_file, FileAccess.WRITE)
+	if file:
+		file.store_string(all_paths)
+		file.close()
 	get_tree().quit()
 func _on_file_dialog_dir_selected(path: String):
-	print(path)
+	var file = FileAccess.open(text_file, FileAccess.WRITE)
+	if file:
+		file.store_line(path)
+		file.close()
 	get_tree().quit()
 func _process(_delta):
 	if file_dialog.visible == false:
-		print("")
 		get_tree().quit()
